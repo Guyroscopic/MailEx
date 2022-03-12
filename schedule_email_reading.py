@@ -1,26 +1,17 @@
-from email_utility import read_email
+from email_utility      import read_email
+from ner_utility        import perform_ner
+from database_utility   import insert_emails
 
 import imaplib
 import time
 import os
-import flair
 import pandas as pd
-
-
-def perform_ner(sentence):
-
-    entities = [ span.to_dict() for span in sentence.get_spans() ]
-    for entity in entities:
-        entity['labels'] = entity['labels'][0].to_dict()
-
-    return entities
 
 
 #Fetching mailEx account credentials
 username = os.environ.get("MAILEX_EMAIL_ID")
 password = os.environ.get("MAILEX_EMAIL_PASSWORD")
 
-NERtagger = flair.models.SequenceTagger.load('flair/ner-english-ontonotes-large')
 
 if __name__ == '__main__':
     while True:
@@ -38,7 +29,7 @@ if __name__ == '__main__':
         num_total_emails = int(messages[0])
 
         #Number of emails that have been read
-        num_read_emails = 8#int(open('email_utils/num_read_emails.txt', 'r').read())
+        num_read_emails = int(open('num_read_emails.txt', 'r').read())
 
         #Dataframe for storing new emails read
         emails = pd.DataFrame()
@@ -60,38 +51,27 @@ if __name__ == '__main__':
         imap.close()
         imap.logout()
 
-        ###------PROCESS EMAILS AND SAVE TO DATABASE-----####
-        emails['sentences'] = emails['cleaned_body'].apply(flair.data.Sentence)
-        # sentences = [
-        #     flair.data.Sentence(email['Cleaned'])
-        #     for email in emails
-        # ]
+        #Performing NER on emails
+        emails = perform_ner(emails)
 
-        NERtagger.predict(emails['sentences'].to_list())
+        #Perfroming RE on emails
+        ###-----HERE-----###
 
-        emails['entities'] = emails['sentences'].apply(perform_ner)
-           
-        out = emails.to_json(orient= 'records', default_handler= str, indent= 4)
-        
-        open('out.json', 'w').write(out)
+        #Updating Database by adding new emails
+        insert_emails(emails)
 
-        # predictions = [[ 
-        #     span.to_dict() 
-            
-        #     for span     in sentence.get_spans()
-        # ]   for sentence in sentences
-        # ] 
+
+        # out = emails.to_json(orient= 'records', default_handler= str, indent= 4)        
+        # open('out.json', 'w').write(out)
+
+
 
         for email in emails.iterrows():
             print(email)
             print('-'*50)
                 
-        # print(predictions[0])
-        # print(type(predictions[0]))
-        # print(predictions[0])
-        #####-------------------------------------------#####
 
-        #Emptying the emails List
+        #Emptying the emails dataframe
         del emails
 
         #Sleeping for 'x' amount of time

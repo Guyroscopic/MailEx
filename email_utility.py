@@ -8,7 +8,7 @@ def remove_URL(text):
     Remove URLs from a sample string
     """
 
-    return re.sub(r"<http\S+", "", text)
+    return re.sub(r"http\S+", "", text)
 
 def remove_non_ascii(words):
     """
