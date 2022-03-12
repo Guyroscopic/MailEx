@@ -1,0 +1,158 @@
+[
+    {
+        "subject":"You may lose access to some of your third-party apps",
+        "from":"Google <no-reply@accounts.google.com>",
+        "date":"Fri, 04 Mar 2022 02:36:00 GMT",
+        "body":"[image: Google]\r\nOn May 30, you may lose access to apps that are using less secure sign-in\r\ntechnology\r\n\r\n\r\nabdul.rafey7047@gmail.com\r\nTo help keep your account secure, Google will no longer support the use of\r\nthird-party apps or devices which ask you to sign in to your Google Account\r\nusing only your username and password. Instead, you\u2019ll need to sign in\r\nusing Sign in with Google\r\n<https:\/\/accounts.google.com\/AccountChooser?Email=abdul.rafey7047@gmail.com&continue=https:\/\/support.google.com\/accounts\/answer\/112802?rfn%3D1646361360139%26anexp%3Dnret-fa>\r\nor other more secure technologies, like OAuth 2.0. Learn more\r\n<https:\/\/accounts.google.com\/AccountChooser?Email=abdul.rafey7047@gmail.com&continue=https:\/\/support.google.com\/accounts\/answer\/6010255?rfn%3D1646361360139%26anexp%3Dnret-fa>\r\n------------------------------\r\n*What do you need to do?*\r\n\r\n*Email software, like Outlook 2016 or earlier,* has less secure access to\r\nyour Gmail. Switch to Office 365, Outlook 2019 or newer, or any other email\r\nsoftware where you can sign in using *Sign in with Google*.\r\nLearn more\r\n<https:\/\/accounts.google.com\/AccountChooser?Email=abdul.rafey7047@gmail.com&continue=https:\/\/support.google.com\/accounts\/answer\/6010255?rfn%3D1646361360139%26anexp%3Dnret-fa>\r\nYou received this email to let you know about important changes to your\r\nGoogle Account and services.\r\n\u00a9 2022 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA\r\n",
+        "cleaned_body":"[image: Google] On May 30, you may lose access to apps that are using less secure sign-in technology abdul.rafey7047@gmail.com To help keep your account secure, Google will no longer support the use of third-party apps or devices which ask you to sign in to your Google Account using only your username and password. Instead, youll need to sign in using Sign in with Google or other more secure technologies, like OAuth 2.0. Learn more ------------------------------ *What do you need to do?* *Email software, like Outlook 2016 or earlier,* has less secure access to your Gmail. Switch to Office 365, Outlook 2019 or newer, or any other email software where you can sign in using *Sign in with Google*. Learn more You received this email to let you know about important changes to your Google Account and services.  2022 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA",
+        "sentences":"Sentence: \"[ image : Google ] On May 30 , you may lose access to apps that are using less secure sign-in technology abdul.rafey7047 @ gmail.com To help keep your account secure , Google will no longer support the use of third-party apps or devices which ask you to sign in to your Google Account using only your username and password . Instead , youll need to sign in using Sign in with Google or other more secure technologies , like OAuth 2.0 . Learn more ------------------------------ * What do you need to do ?* * Email software , like Outlook 2016 or earlier ,* has less secure access to your Gmail . Switch to Office 365 , Outlook 2019 or newer , or any other email software where you can sign in using * Sign in with Google * . Learn more You received this email to let you know about important changes to your Google Account and services . 2022 Google LLC , 1600 Amphitheatre Parkway , Mountain View , CA 94043 , USA\"   [\u2212 Tokens: 175  \u2212 Token-Labels: \"[ image : Google <S-ORG> ] On May <B-DATE> 30 <E-DATE> , you may lose access to apps that are using less secure sign-in technology abdul.rafey7047 @ gmail.com To help keep your account secure , Google <S-ORG> will no longer support the use of third-party <S-ORDINAL> apps or devices which ask you to sign in to your Google Account using only your username and password . Instead , youll need to sign in using Sign in with <I-WORK_OF_ART> Google <E-WORK_OF_ART> or other more secure technologies , like OAuth 2.0 . Learn more ------------------------------ * What do you need to do ?* * Email software , like Outlook 2016 <S-CARDINAL> or earlier ,* has less secure access to your Gmail <S-ORG> . Switch to Office <B-PRODUCT> 365 <E-PRODUCT> , Outlook <B-PRODUCT> 2019 <E-PRODUCT> or newer , or any other email software where you can sign in using * Sign in with Google * . Learn more You received this email to let you know about important changes to your Google Account and services . 2022 Google <B-ORG> LLC <E-ORG> , 1600 <S-CARDINAL> Amphitheatre Parkway , Mountain <B-GPE> View <E-GPE> , CA <S-GPE> 94043 <S-CARDINAL> , USA <S-GPE>\"]",
+        "entities":[
+            {
+                "text":"Google",
+                "start_pos":8,
+                "end_pos":14,
+                "labels":{
+                    "value":"ORG",
+                    "confidence":0.9999943972
+                }
+            },
+            {
+                "text":"May 30",
+                "start_pos":19,
+                "end_pos":25,
+                "labels":{
+                    "value":"DATE",
+                    "confidence":0.9999895692
+                }
+            },
+            {
+                "text":"Google",
+                "start_pos":161,
+                "end_pos":167,
+                "labels":{
+                    "value":"ORG",
+                    "confidence":0.9999930859
+                }
+            },
+            {
+                "text":"third-party",
+                "start_pos":202,
+                "end_pos":213,
+                "labels":{
+                    "value":"ORDINAL",
+                    "confidence":0.9693793058
+                }
+            },
+            {
+                "text":"with Google",
+                "start_pos":362,
+                "end_pos":373,
+                "labels":{
+                    "value":"WORK_OF_ART",
+                    "confidence":0.3662327677
+                }
+            },
+            {
+                "text":"2016",
+                "start_pos":523,
+                "end_pos":527,
+                "labels":{
+                    "value":"CARDINAL",
+                    "confidence":0.2639622092
+                }
+            },
+            {
+                "text":"Gmail",
+                "start_pos":572,
+                "end_pos":577,
+                "labels":{
+                    "value":"ORG",
+                    "confidence":0.8355706334
+                }
+            },
+            {
+                "text":"Office 365",
+                "start_pos":589,
+                "end_pos":599,
+                "labels":{
+                    "value":"PRODUCT",
+                    "confidence":0.9938555956
+                }
+            },
+            {
+                "text":"Outlook 2019",
+                "start_pos":601,
+                "end_pos":613,
+                "labels":{
+                    "value":"PRODUCT",
+                    "confidence":0.6779265106
+                }
+            },
+            {
+                "text":"Google LLC",
+                "start_pos":821,
+                "end_pos":831,
+                "labels":{
+                    "value":"ORG",
+                    "confidence":0.9999636412
+                }
+            },
+            {
+                "text":"1600",
+                "start_pos":833,
+                "end_pos":837,
+                "labels":{
+                    "value":"CARDINAL",
+                    "confidence":0.7978505492
+                }
+            },
+            {
+                "text":"Mountain View",
+                "start_pos":860,
+                "end_pos":873,
+                "labels":{
+                    "value":"GPE",
+                    "confidence":0.9997897744
+                }
+            },
+            {
+                "text":"CA",
+                "start_pos":875,
+                "end_pos":877,
+                "labels":{
+                    "value":"GPE",
+                    "confidence":0.9939802885
+                }
+            },
+            {
+                "text":"94043",
+                "start_pos":878,
+                "end_pos":883,
+                "labels":{
+                    "value":"CARDINAL",
+                    "confidence":0.9982767105
+                }
+            },
+            {
+                "text":"USA",
+                "start_pos":885,
+                "end_pos":888,
+                "labels":{
+                    "value":"GPE",
+                    "confidence":0.9956899285
+                }
+            }
+        ]
+    },
+    {
+        "subject":"Test Email for MailEx",
+        "from":"Abdul Rafey <arafey183@gmail.com>",
+        "date":"Sun, 27 Feb 2022 15:57:54 +0500",
+        "body":"Please ignore this email\r\n",
+        "cleaned_body":"Please ignore this email",
+        "sentences":"Sentence: \"Please ignore this email\"   [\u2212 Tokens: 4]",
+        "entities":[
+
+        ]
+    }
+]
