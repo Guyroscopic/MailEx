@@ -5,14 +5,14 @@ import email, unicodedata, re
 
 def remove_URL(text):
     """
-    Remove URLs from a sample string
+    Remove URLs from a string
     """
 
     return re.sub(r"http\S+", "", text)
 
 def remove_non_ascii(words):
     """
-    Remove non-ASCII characters from list of tokenized words
+    Remove non-ASCII characters from list of words
     """
 
     new_words = []
@@ -63,6 +63,7 @@ def read_email(imap, email_ID):
                 Date = Date.decode(encoding)
                 
             
+            read_email['_id']     = email_ID
             read_email['subject'] = subject
             read_email['from']    = From
             read_email['date']    = Date
