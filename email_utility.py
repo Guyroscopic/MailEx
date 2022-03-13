@@ -30,6 +30,22 @@ def clean_text(text):
     return cleaned_text
 
 
+def extract_email(string):
+    """
+    Function that extracts email from a given string of format: 'USERNAME <EMAIL_ID>'
+    """
+
+    return re.search(r'\<(.*?)\>', string).group(1)
+
+
+def extract_username(string):
+    """
+    Function that extracts email username form a given string of format: 'USERNAME <EMAIL_ID>'
+    """
+
+    return string.split('<')[0]
+
+
 def read_email(imap, email_ID):
 
     read_email = {}
@@ -63,10 +79,11 @@ def read_email(imap, email_ID):
                 Date = Date.decode(encoding)
                 
             
-            read_email['_id']     = email_ID
-            read_email['subject'] = subject
-            read_email['from']    = From
-            read_email['date']    = Date
+            read_email['_id']           = email_ID
+            read_email['subject']       = subject
+            read_email['from_userename']= extract_username(From)
+            read_email['form_email']    = extract_email(From)
+            read_email['date']          = Date
 
 
             # if the email message is multipart
@@ -104,3 +121,4 @@ def read_email(imap, email_ID):
 
     read_email["cleaned_body"] = clean_text(read_email["body"])
     return read_email
+

@@ -1,6 +1,6 @@
 from email_utility      import read_email
-from ner_utility        import perform_ner
-from database_utility   import insert_emails
+# from ner_utility        import perform_ner
+from database_utility   import insert_emails, get_num_read_emails, set_num_read_emails
 
 import imaplib
 import time
@@ -29,12 +29,12 @@ if __name__ == '__main__':
         num_total_emails = int(messages[0])
 
         #Number of emails that have been read
-        num_read_emails = int(open('num_read_emails.txt', 'r').read())
+        num_read_emails = get_num_read_emails()#int(open('num_read_emails.txt', 'r').read())
 
         #Dataframe for storing new emails read
         emails = pd.DataFrame()
 
-        # print(f'Emails Read: {num_read_emails}, Total Emails: {num_total_emails}')
+        print(f'Emails Read: {num_read_emails}, Total Emails: {num_total_emails}')
 
 
         ###------READ EMAILS-----####
@@ -46,25 +46,20 @@ if __name__ == '__main__':
 
         #Saving number of emails read
         # open('num_read_emails.txt', 'w').write(str(num_total_emails))
+        set_num_read_emails(num_total_emails)
 
         #Closing the connection and logging out
         imap.close()
         imap.logout()
 
         #Performing NER on emails
-        emails = perform_ner(emails)
+        # emails = perform_ner(emails)
 
         #Perfroming RE on emails
         ###-----HERE-----###
 
         #Updating Database by adding new emails
-        insert_emails(emails)
-
-
-        # out = emails.to_json(orient= 'records', default_handler= str, indent= 4)        
-        # open('out.json', 'w').write(out)
-
-
+        # insert_emails(emails)
 
         for email in emails.iterrows():
             print(email)
